@@ -1,0 +1,446 @@
+/* aタグの下線非表示 */
+a { text-decoration: none; }
+
+/* 画像の左右の余白削除用 */
+body { 
+    margin: 0; 
+    overflow-x: hidden; /*横スクロールバーなし*/
+    overflow-y: scroll;
+}
+
+/* 背景の男性の絵の設定 */
+.main_back {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    /* width: 1140px; */
+    top: 0;
+    width: 100%;
+}
+/* PC側 */
+.mb_pc { 
+    zoom: 55%;
+    object-position: calc(60vw - 1080px) 0;
+    display: block !important;
+    overflow: hidden;
+    /* border: 2px solid violet; */
+}
+.mb_sp { display: none !important;}
+@media only screen and (max-width: 1081px) {
+    .mb_pc {
+        padding-top: 100px;
+        object-position: calc(50vw - 1080px); 
+    }
+}
+/* スマホ側 */
+@media only screen and (max-width: 767px) {
+    .mb_pc { display: none !important;}
+    .mb_sp {
+        /* float: none; */
+        margin-top: 50px;
+        width: 100%;
+        display: block !important;
+        /* border: 1px solid violet; */
+    }
+}
+
+/* ヘッダの設定 */
+.main_head {
+    position: absolute;
+    top: 0px;
+    /* left: 30px; */
+    width: 100%; 
+}
+
+/* POTEPANCAMPのロゴ */
+.head_A {
+    position: absolute;
+    top: 30px;
+    left: 50px;
+    zoom: 50%;
+    /* background-color: blue; */
+}
+@media only screen and (max-width: 767px) {
+    .head_A {
+        position: absolute;
+        top: 30px;
+        left: 30px;
+        zoom: 40%;
+    }
+}
+
+/* CONTENT〜DOCUMENTのリンク */
+.head_B {
+    position: absolute;
+    top: 20px;
+    right: 50px;
+    display: flex;
+    /* background-color: tomato; */
+    text-align: center;
+    line-height: 100%;
+    align-items: center;
+    /* color: black; */
+}
+@media only screen and (max-width: 1081px) { 
+    .head_B {display: none;}
+    /* ハンバーガ設定 */
+    #hamburger {
+        background-color: transparent;  /*透明の背景*/
+        position: relative;             /*ハンバーガーの横線の位置を決めるための基準*/
+        cursor: pointer;                /*リンクを示すカーソルを表示（指差しマーク）*/
+        /* margin: 0 0 0 auto;           左側に余白を作り、ハンバーガーメニューを右端に配置 */
+        margin-right: 0px;
+        margin-left: auto;
+        height: 60px;
+        width: 60px;
+    }
+    .icon span {
+        position: absolute;       /*親要素である#hamburgerを基準に位置を指定*/
+        left: 15px;               /*#hamburger内の左がら15pxに横線を配置（幅が60pxなので右からも15px）*/
+        width: 30px;              /*横線の幅が30px*/
+        height: 3px;              /*横線の高さが3px*/
+        background-color: black; 
+    }    
+    .icon span:nth-of-type(1) {
+        top: 18px;
+    }
+    .icon span:nth-of-type(2) {
+        top: 28.5px;
+    }
+    .icon span:nth-of-type(3) {
+        bottom: 18px;
+    }
+}
+
+.head_B_size {
+    color: black;
+    margin-left: 30px;
+    /* border:1px solid black; */
+}
+
+/* head_Bの文字サイズ調整 */
+.font_01 {
+    color: black;
+    font-weight: bold;
+    font-size: 15px;
+}
+.font_02 {
+    color: black;
+    font-size: 5px;
+}
+
+/* 無料カウンセリングのリンク */
+.head_C {
+    margin-left: 20px; 
+    border-radius: 1000px;
+    padding: 15px 25px 15px 25px;
+    font-size: 11px;
+    font-weight: bold;
+    background-color: #FF6600;
+    color: white;
+    /* border: 1px solid black; */
+}
+.head_C:hover {
+    background-color: #FFAD90;
+}
+
+/* 最短５ヶ月〜資料請求まで */
+.box_ALL {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    /* width: 100vw; */
+    display: flex;
+    flex-flow: column;
+    text-align: center;
+    /* font-weight: bold; */
+    /* border: 2px solid red;     */
+}
+
+/* 最短５ヶ月の文字のところ */
+.box_A {
+    width: 500px;
+    margin-left: calc(50vw - 500px);
+    font-weight: bold; 
+    font-family: "メイリオ";
+    font-size: 35px;
+    /* border: 1px solid black; */
+}
+
+/* まるが３個あるところの図 */
+.box_B {
+    width: 500px;
+    margin-left: calc(50vw - 500px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* border: 1px solid black; */
+}
+
+/*  各々の丸のサイズ */
+.box_B_size {
+    padding: 5px;
+}
+
+/*  set_01:下部の無料カウンセリングはこちら　*/
+/*  set:02:資料請求はこちら　*/
+.box_C {
+    padding-top: 50px;
+    width: 500px;
+    margin-left: calc(50vw - 500px);
+    font-size: 15px;
+    /* border: 1px solid black; */
+}
+.set_01 {
+    border-radius: 1000px;
+    padding: 20px 40px 20px 40px;
+    /*border: 1px solid black;*/
+    background-color: orange;
+    color: white;
+}
+.set_02 {
+    margin-left: 20px;
+    border-radius: 1000px;
+    padding: 20px 20px 20px 20px;
+    border: 1px solid #DCDCDC;
+    color: black;
+}
+.set_01:hover {
+    background-color: #FFAD90;
+}
+
+/* ※の説明 */
+.box_D {
+    margin-top: 50px;
+    /* margin-bottom: 0; */
+    width: 950px;
+    margin-left: calc(50vw - 500px);
+    text-align: left;
+    font-size: 11px;
+    color: #A9A9A9;
+    /* border: 1px solid green; */
+}
+
+@media only screen and (max-width: 1081px){
+    .box_ALL {
+        top: 130px;
+        margin-right: 30px;
+        /* border: 2px solid red;     */
+    }
+    .box_left_kotei {
+        margin-left: 30px;
+    }
+    .box_D {
+        width: auto;
+    }
+}
+
+@media only screen and (max-width: 767px){
+    .box_ALL{
+        margin: 0;
+        padding: 0;
+        top: 70vw;
+        left: 0;
+    }
+    .box_A {
+        width: auto;
+        margin-left: 20px;
+        margin-right: 20px;
+        font-size: 20px;
+        /* border: 1px solid blue; */
+    }
+    .box_B {
+        width: calc(100% - 40px);
+        display: flex;
+        margin-left: 20px;
+        margin-right: 20px;
+        justify-content: center;
+        margin-bottom: 20px;
+        /* border: 1px solid black; */
+    }
+    /*  各々の丸のサイズ */
+    .box_B_size {
+        flex-grow: 1;
+        /* border: 1px solid orange; */
+    }
+    .box_C {
+        display: flex;
+        flex-flow: column;
+        padding-top: 0;
+        width: auto;
+        margin-left: 20px;
+        margin-right: 20px;
+        height: 120px;
+        justify-content: space-between;
+        /* border: 1px solid red; */
+        /* position: relative; */
+    }
+    .set_02 {
+        margin: 0;
+        border-radius: 1000px;
+        padding: 10px 20px 10px 20px;
+        /* border: 1px solid #DCDCDC; */
+        color: black;
+        /* position: relative; */
+    }
+    .set_01:hover {
+        /* background-color: inherit; */
+        background-color: orange;
+    }
+    .box_D {
+        margin-top: 10px;
+        padding-bottom: 0;
+        text-align: left;
+        width: auto;
+        margin-left: 20px;
+        margin-right: 20px;
+        /* position: relative; */
+        /* border: 1px solid red; */
+    }    
+}
+
+/* オレンジ1POTEPAN CAMPとは〜CONTENT */
+.orange_back {
+    /* position: absolute; */
+    /* margin-top: 10px; */
+    padding: 0;
+    /* padding-bottom: 0; */
+    width: 100%;
+    text-align: left;
+    background-color: orange;
+    display: flex;
+    align-items: center;
+    /* border: 2px solid black; */
+}
+
+/* POTEPAN CAMPとは */
+.Left_01 {
+    margin: 0; /*上下余白なし*/
+    margin-top: 60px;
+    margin-bottom: 20px;
+    margin-left: calc(50vw - 500px);
+    width: 500px;
+    text-align: left;
+    font-weight: bold;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    /* border: 1px solid blue; */
+}
+
+/* POTEPAN CAMPとはの説明文 */
+.Left_02 {
+    margin: 0; /*上下余白なし*/
+    margin-bottom: 60px;
+    margin-left: calc(50vw - 500px);
+    width: 600px;
+    text-align: left;
+    font-weight: bold;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    /* border: 1px solid blue; */
+}
+.font_03 {
+    font-size: 50px;
+}
+.font_04 {
+    font-size: 35px;
+}
+.font_05 {
+    line-height: 180%;
+    font-size: 15px;
+}
+
+/* CONTENTの角丸ボタン */
+.Right_01 {
+    width: 200px;
+    margin-left: 150px;
+    text-align: center;
+    border-radius: 1000px;
+    padding: 15px 20px 15px 20px;
+    border: 1px solid white;
+    color: orange;
+    background-color: white;
+    line-height: 100%;
+}
+.font_06 {
+    font-size: 20px;
+    font-weight: bold;
+}
+.font_07 {
+    font-size: 12px;
+}
+
+@media only screen and (max-width: 1148px){
+    .Right_01 {
+        margin-right: 30px;
+        /* margin-left: auto; */
+    }
+}
+
+@media only screen and (max-width: 1081px){
+    .Left_01 {        
+        margin-left: 30px;
+    }
+    .Left_02 {        
+        width: auto;
+        margin-left: 30px;
+        margin-right: 30px;
+        margin-bottom: 20px;
+    }
+}
+
+@media only screen and (max-width: 1024px){    
+    .orange_back {
+        flex-direction: column;
+        /* margin-bottom: 100px; */
+    }
+    .Left_01 {        
+        margin-left: 30px;
+    }
+    .Left_02 {        
+        width: auto;
+        margin-left: 30px;
+        margin-right: 30px;
+        margin-bottom: 20px;
+    }
+    .Right_01 {
+        /* width: auto; */
+        margin-left: 30px;
+        margin-right: 30px;
+        margin-bottom: 45px;
+        /* border: 1px solid black; */
+    }
+}
+
+@media only screen and (max-width: 767px){
+    .orange_back {
+        /* position: absolute; */
+        width: 100vw;
+        margin-top: 50vh;
+    }
+    .Left_01 {     
+        width: 250px;
+        text-align: center;   
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .Left_02 {        
+        width: auto;
+        margin-left: 20px;
+        margin-right: 20px;
+        margin-bottom: 20px;
+    }
+    .Right_01 {
+        /* margin-left: calc(50vw - 330px); */
+        margin-left: 70px;
+        margin-right: 70px;
+        margin-bottom: 45px;
+        /* border: 1px solid black; */
+    }
+    .font_03 {
+        font-size: 30px;
+    }
+    .font_04 {
+        font-size: 30px;
+    }
+}
